@@ -1,14 +1,11 @@
 #pragma once
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-#include <iostream>
-class Rock
+#include "Object.h"
+class Rock: public Object
 {
 public:
 	Rock();
 	Rock(int x, int y);
 	~Rock();
-	sf::Sprite rockSprite;
 private:
 	sf::Texture rockTexture;
 	

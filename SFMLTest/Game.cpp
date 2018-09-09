@@ -18,13 +18,15 @@ Game::Game()
 {
 	window.create(sf::VideoMode(800, 800), "Test Window");
 	
+	m.minionWorld = w;
+
 	if (!spriteSheetTexture.loadFromFile("Spritesheet.png")) {
 		std::cout << "Failed to load spritesheet" << std::endl;
 	}
-	m.minionSprite.setTexture(spriteSheetTexture);
-	m.minionSprite.setTextureRect(sf::IntRect(0,0,32,32));
-	w.r.rockSprite.setTexture(spriteSheetTexture);
-	w.r.rockSprite.setTextureRect(sf::IntRect(33,0,32,32));
+	m.spr.setTexture(spriteSheetTexture);
+	m.spr.setTextureRect(sf::IntRect(0,0,32,32));
+	w.r.spr.setTexture(spriteSheetTexture);
+	w.r.spr.setTextureRect(sf::IntRect(33,0,32,32));
 
 	
 }
@@ -42,9 +44,8 @@ void Game::Update()
 		
 		window.setView(c.view);
 		window.draw(b.backgroundSprite);
-		window.draw(w.r.rockSprite);
-		window.draw(m.minionSprite);
-		//window.draw(p.playerSprite); //Hide the player to pretend that was moves the camera, probably just switch to moving the camera directly instead of player but whatever
+		window.draw(w.r.spr);
+		window.draw(m.spr);
 		window.display();
 	}
 }

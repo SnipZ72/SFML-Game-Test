@@ -1,8 +1,8 @@
 #pragma once
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-#include <iostream>
-class Minions
+#include "Object.h"
+#include "World.h"
+#include "Vec.h"
+class Minions: public Object
 {
 enum jobs {
 		destory,
@@ -12,8 +12,10 @@ public:
 	Minions();
 	~Minions();
 	void doJob();
-	sf::Sprite minionSprite;
+	World minionWorld = World();
 private:
+	int targX = 500;
+	int targY = 50;
 	int speed;
 	int health;
 	sf::Texture minionTexture;
