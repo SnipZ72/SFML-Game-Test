@@ -7,9 +7,8 @@ class Object
 public:
 	Object();
 	~Object();
-	void Destroy(Object o);
-	int x;
-	int y;
+	void Destroy();
+	sf::Vector2f pos;
 	sf::Sprite spr;
 };
 

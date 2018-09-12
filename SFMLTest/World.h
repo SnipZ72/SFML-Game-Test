@@ -7,7 +7,7 @@ public:
 	World(int width, int height);
 	~World();
 	World();
-	Rock r;
+	Rock r[500];
 private:
 	void CreateWorld();
 	int width;

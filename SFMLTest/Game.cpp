@@ -11,12 +11,12 @@ Background b;
 Minions m;
 Camera c;
 World w(200,200);
-float speed = 0.05f;
+float speed = 0.1f;
 sf::Texture spriteSheetTexture;
 
 Game::Game()
 {
-	window.create(sf::VideoMode(800, 800), "Test Window");
+	window.create(sf::VideoMode(1920, 1080), "Test Window");
 	
 	m.minionWorld = w;
 
@@ -25,13 +25,15 @@ Game::Game()
 	}
 	m.spr.setTexture(spriteSheetTexture);
 	m.spr.setTextureRect(sf::IntRect(0,0,32,32));
-	w.r.spr.setTexture(spriteSheetTexture);
-	w.r.spr.setTextureRect(sf::IntRect(33,0,32,32));
+	for (int i = 0; i < sizeof(m.minionWorld.r) / sizeof(m.minionWorld.r[0]); i++) {
+		m.minionWorld.r[i].spr.setTexture(spriteSheetTexture);
+		m.minionWorld.r[i].spr.setTextureRect(sf::IntRect(33, 0, 32, 32));
+	}
 
 	
 }
 
-void Game::Update() 
+void Game::Update()
 {
 	
 	while (window.isOpen()) {
@@ -39,12 +41,16 @@ void Game::Update()
 		HandleEvents();
 
 		p.Move();
-		m.doJob();
+		m.DoJob();
 		c.MoveCamera(p.playerSprite.getPosition(), window.getSize());
 		
 		window.setView(c.view);
 		window.draw(b.backgroundSprite);
-		window.draw(w.r.spr);
+		for (int i = 0; i < sizeof(m.minionWorld.r) / sizeof(m.minionWorld.r[0]); i++) {
+			//if(w.r[i].pos.x > -1000 && w.r[i].pos.y > -1000)
+			window.draw(m.minionWorld.r[i].spr);
+		}
+		//window.draw(m.currRock.spr);
 		window.draw(m.spr);
 		window.display();
 	}
@@ -59,10 +65,10 @@ void Game::HandleEvents()
 		}
 	}
 	//Move the camera with mouse, maybe implement with minimap
-	/*if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 		p.playerSprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
 		//std::cout << "Mouse Click(Left)" << std::endl;
-	}*/
+	}
 	//p.pos = sf::Vector2f(0, 0);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 		p.playerSprite.move(sf::Vector2f(-speed, 0));

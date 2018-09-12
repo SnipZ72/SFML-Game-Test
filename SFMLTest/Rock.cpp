@@ -4,9 +4,9 @@
 
 Rock::Rock(int x, int y)
 {
-	this->x = x;
-	this->y = y;
-	spr.setPosition(x, y);
+	this->pos.x = x;
+	this->pos.y = y;
+	spr.setPosition(pos.x, pos.y);
 
 }
 

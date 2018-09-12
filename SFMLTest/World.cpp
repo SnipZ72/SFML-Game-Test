@@ -16,8 +16,10 @@ World::World() {
 void World::CreateWorld() 
 {
 	srand(time(NULL));
-	r = Rock(rand() % 500, rand() % 500);
-	std::cout << r.x << std::endl << r.y << std::endl;
+	std::cout << sizeof(r) / sizeof(r[0]) << std::endl;
+	for (int i = 0; i < sizeof(r) / sizeof(r[0]); i++) {
+		r[i] = Rock(rand() % 1000, rand() % 1000);
+	}
 }
 
 World::~World()

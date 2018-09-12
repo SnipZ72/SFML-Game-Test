@@ -1,4 +1,7 @@
 ﻿  Game.cpp
-  Object.cpp
+c:\users\jason\source\repos\sfmltest\sfmltest\game.cpp(69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Minions.cpp
+c:\users\jason\source\repos\sfmltest\sfmltest\minions.cpp(13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\jason\source\repos\sfmltest\sfmltest\minions.cpp(14): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Generating Code...
   SFMLTest.vcxproj -> C:\Users\Jason\source\repos\SFMLTest\Debug\SFMLTest.exe

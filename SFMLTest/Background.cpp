@@ -15,21 +15,22 @@ void Background::randomColour() {
 	{
 		for (int j = 0; j < 255; j++)
 		{
-			for (int k = 0; k < 255; k++)
-			{
+			//for (int k = 0; k < 255; k++)
+			//{
 				//image.setPixel(i, j, sf::Color(i, j, i-j));
 				image.setPixel(i, j, sf::Color(0,127,14));
-			}
+			//}
 			
 		}
 	}
 
 	texture.update(image);
 	texture.setSmooth(true);
-	image.saveToFile("test.png");
+	//image.saveToFile("test.png");
 	//texture.loadFromFile("test.png");
 	backgroundSprite.setTexture(texture);
-	backgroundSprite.setScale(3, 3);
+	backgroundSprite.setPosition(-500, -500);
+	backgroundSprite.setScale(10, 10);
 	
 
 

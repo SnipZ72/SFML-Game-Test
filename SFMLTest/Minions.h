@@ -11,14 +11,16 @@ enum jobs {
 public:
 	Minions();
 	~Minions();
-	void doJob();
+	void DoJob();
 	World minionWorld = World();
 private:
 	int targX = 500;
 	int targY = 50;
-	int speed;
+	float speed = 0.020f;
 	int health;
 	sf::Texture minionTexture;
+	Rock *currRock;
+	void GetClosestRock();
 	
 	
 };

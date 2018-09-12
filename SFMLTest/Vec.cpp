@@ -23,7 +23,7 @@ float Vec::Distance(sf::Vector2f a, sf::Vector2f b)
 	float xDist = std::abs(a.x - b.x);
 	float yDist = std::abs(a.y - b.y);
 
-	return sqrt(pow(xDist, 2) + pow(yDist, 2));;
+	return sqrt(pow(xDist, 2) + pow(yDist, 2));
 
 }
 
