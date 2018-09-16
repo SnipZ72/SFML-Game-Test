@@ -1,0 +1,9 @@
+﻿  World.cpp
+c:\users\jason\source\repos\sfml-game-test-master\sfmltest\world.cpp(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\jason\source\repos\sfml-game-test-master\sfmltest\world.cpp(18): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\jason\source\repos\sfml-game-test-master\sfmltest\world.cpp(24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  SFMLTest.vcxproj -> C:\Users\Jason\source\repos\SFML-Game-Test-master\Debug\SFMLTest.exe
